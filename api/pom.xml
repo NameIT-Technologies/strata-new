@@ -11,7 +11,7 @@
 	<groupId>com.strata.tickets</groupId>
 	<artifactId>tickets-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>strata-tickets-api</name>
 	<description>API for Creating &amp; Closing tickets for the Field manager</description>
 	<properties>
@@ -74,6 +74,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

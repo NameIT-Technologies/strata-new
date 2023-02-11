@@ -41,7 +41,14 @@ public class APIController {
             consumes=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<TicketDetails> creteTicket(@RequestBody TicketDetails tkt)
     {
+        Long mgrId;
         System.out.println("CreateTicket Called =>"+ tkt.getTicketID());
+
+        List<MgrDetails> mgrList=mgrRepo.findByAgentId(tkt.getAgentId());
+        if(mgrList.size()>0) {
+            mgrId= mgrList.get(0).getMgrId();
+            tkt.setMgrId(mgrId);
+        }
         tktRepo.save(tkt);
         return ResponseEntity.ok(tkt);
         //return tkt;
@@ -131,6 +138,15 @@ public class APIController {
 
     }
 
+    @DeleteMapping("/deleteticket/{ticketid}")
+    public ResponseEntity<Object> deleteTicketDtl(@PathVariable Long ticketid)
+    {
+        TicketDetails tkts=tktRepo.findById(ticketid).get();
+        Long agentId= tkts.getAgentId();
+        System.out.println("Agent ID => "+agentId);
+        tktRepo.deleteById(ticketid);
+        return getTickets(agentId);
+    }
 
     @RequestMapping(value="/authenticate",method=RequestMethod.POST,
             consumes=MediaType.APPLICATION_JSON_VALUE)
