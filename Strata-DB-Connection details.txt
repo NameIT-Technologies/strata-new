@@ -1,0 +1,9 @@
+ec2-65-1-1-73.ap-south-1.compute.amazonaws.com
+
+4$sDSc5?C)P;hf(oG0)UCmvBt;RWKQEC
+
+Administrator
+
+mysql -u doadmin -h strata-prod-cluster-do-user-13428204-0.b.db.ondigitalocean.com -P 25060 --password
+
+AVNS_xUkC7JOWdLl4-HcJS5F

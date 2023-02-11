@@ -1,0 +1,1 @@
+scp -i "C:\Users\venky\OneDrive\Documents\Key Repo\pem-password-pair.pem" "C:\Projects\strata-new\api\target\tickets-api-0.0.1-SNAPSHOT.jar" ubuntu@ec2-13-232-162-26.ap-south-1.compute.amazonaws.com:~
