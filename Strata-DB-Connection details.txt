@@ -7,3 +7,9 @@ Administrator
 mysql -u doadmin -h strata-prod-cluster-do-user-13428204-0.b.db.ondigitalocean.com -P 25060 --password
 
 AVNS_xUkC7JOWdLl4-HcJS5F
+
+
+
+Backup:
+
+mysqldump -u doadmin -h strata-prod-cluster-do-user-13428204-0.b.db.ondigitalocean.com -P 25060 --databases strata --password > /Users/venky.webhook/Documents/Projects/Strata/databasebackup.sql
